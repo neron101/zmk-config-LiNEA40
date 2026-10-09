@@ -68,3 +68,13 @@
     status = "okay";
     device = <&trackball>;
 };
+
+/* ===== DYA Studio: トラボ速度をStudioから変更可能に ===== */
+#include <zephyr/dt-bindings/input/input-event-codes.h>
+#include <input/processors.dtsi>
+#include <input/processors/runtime-input-processor.dtsi>
+#include <behaviors/battery_history_request.dtsi>
+
+&trackball_listener {
+    input-processors = <&mouse_runtime_input_processor>;
+};
